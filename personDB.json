@@ -1,0 +1,22 @@
+{
+  "persons": [
+    {
+      "Vorname": "Steffan",
+      "Nachname": "Müller",
+      "EmailAdresse": "StefanMüller@test.de",
+      "id": 1
+    },
+    {
+      "Vorname": "Michael",
+      "Nachname": "Schäfer",
+      "EmailAdresse": "MichaelSchäfer@test.de",
+      "id": 2
+    },
+    {
+      "Vorname": "Tom",
+      "Nachname": "Becker",
+      "EmailAdresse": "TomBecker@test.de",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.item{
+    position: relative;
+    display: grid;
+    border: 1px solid black;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.item input{
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    width: 15vw;
+    height: 50%;
+    padding: 3px;
+    border-bottom: 2px solid black;
+}
+.item input:focus{
+    outline: none;
+}
+.inputField{
+    margin: 2%;
+}
+.btns{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.btns button{
+    display: block;
+    background-color: black;
+    color: white;
+    width: 10vw;
+    font-size: 1em; 
+    border-radius: 10px;
+}
+.btns button:hover{
+    cursor: pointer;
+    background-color: #242424;
+    border: 2px solid white;
+    transition: 0.4s;
+}
+.id{
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+.id p{
+    font-size: 1.5vw; 
+    margin: 3px 3px;
+}
+label{
+    font-size: 1em;
+}
+.infos{
+    font-size: 1em;
+}
+.error{
+    width: 100%;
+    color: red;
+    text-align: center;
+}

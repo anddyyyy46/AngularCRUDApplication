@@ -1,0 +1,23 @@
+.item{
+    display: grid;
+    border: 1px solid black;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    gap: 7vw;
+}
+.btns mat-icon:hover{
+    cursor: pointer;
+}
+.infoEdit{
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+.infoEdit:hover{
+    cursor: pointer;
+}

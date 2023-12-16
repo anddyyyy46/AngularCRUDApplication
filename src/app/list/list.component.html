@@ -1,0 +1,5 @@
+<div class="list">
+    <app-list-item *ngFor="let person of persons" [person]="person" (deletePerson)="deletePerson($event)" (updatePerson)="updatePerson($event)"></app-list-item>
+    <app-add (showForm)="showForm()"></app-add>
+    <app-person-form *ngIf="formIsVisible" [newPerson]="true" (addPerson)="addPerson($event)" (cancelForm)="cancelForm()" [editable]="true"></app-person-form>
+</div>

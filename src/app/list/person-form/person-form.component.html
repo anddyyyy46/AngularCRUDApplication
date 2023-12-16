@@ -1,0 +1,39 @@
+<div *ngIf="editable; else nonEditable">
+    <form #f="ngForm" class="item" (ngSubmit)="onSubmit(f)">
+        <div class="id" *ngIf="!newPerson">
+            <p>Id: {{person.id}}</p>
+        </div>
+        <div class="inputField">
+            <label for="Vorname">Vorname:</label>
+            <input id="vornameInput" ngModel={{person.Vorname}} name="Vorname" required/>
+        </div>
+        <div class="inputField">
+            <label for="Nachname">Nachname:</label>
+            <input id="nachnameInput" ngModel={{person.Nachname}} name="Nachname" required/>
+        </div>
+        <div class="inputField">
+            <label for="emailAdresse:">Email-Adresse:</label>
+            <input id="emailInput" ngModel={{person.EmailAdresse}} name="EmailAdresse" required/>
+        </div>
+        <div class="btns">
+            <button type="button" (click)="triggerCancelForm()">Cancel</button>
+            <button>Submit</button>
+        </div>
+        <p *ngIf="error" class="error">{{errorMessage}}</p>
+    </form>
+    
+</div>
+<ng-template #nonEditable>
+    <div class="item">
+        <div class="id">
+            <p id="id">Id: {{person.id}}</p>
+        </div>
+        <p class="infos" id="vorname">Vorname: {{person.Vorname}}</p>
+        <p class="infos" id="nachname">Nachname: {{person.Nachname}}</p>
+        <p class="infos" id="email">Email-Adresse: {{person.EmailAdresse}}</p>
+        <div class="btns">
+            <button type="button" (click)="triggerCancelForm()">Cancel</button>
+            <button type="button" (click)="setEditable()">Edit</button>
+        </div>
+    </div>
+</ng-template>

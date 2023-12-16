@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+</head>
+<body>
+    <div *ngIf="!formIsVisible; else showForm" class="item" id={{person.id}}>
+        <p id="vorname">{{person.Vorname}}</p>
+        <p id="nachname">{{person.Nachname}}</p>
+        <div class="btns">
+            <div class="infoEdit" (click)="triggerForm()">
+                <mat-icon>info</mat-icon>
+                <h2>/</h2>
+                <mat-icon>edit</mat-icon>
+            </div>
+            <mat-icon (click)="triggerDeletePerson()">delete</mat-icon>
+        </div>
+        
+    </div>
+    <ng-template #showForm>
+        <app-person-form (cancelForm)="cancelForm()" [newPerson]="false" [updatePerson]="updatePerson" [person]="person" [editable]="false"></app-person-form>
+    </ng-template>
+</body>
+</html>

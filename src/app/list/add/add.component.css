@@ -1,0 +1,16 @@
+.addBtn{
+    position: fixed;
+    margin: 2%;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    padding: 15px 25px;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}
+.addBtn:hover{
+    cursor: pointer;
+    background-color: #242424;
+    transition: 0.4s;
+}
