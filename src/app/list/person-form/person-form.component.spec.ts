@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { PersonFormComponent } from './person-form.component';
 import { By } from '@angular/platform-browser';
 import { NgForm } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
 
 describe('PersonFormComponent', () => {
   let component: PersonFormComponent;
@@ -106,6 +107,30 @@ describe('PersonFormComponent', () => {
 
       fixture.whenStable().then(() => {
         expect(component.onSubmit(updatedPerson)).toBeFalse()
+      });
+    })
+  );
+  it(
+    'should check if a person updates',
+    waitForAsync(() => {
+      const person = {
+        id: 1,
+        Vorname: "Ben",
+        Nachname: "Müller",
+        EmailAdresse: "BenMüller@test.de",
+      };
+      const updatedPerson = {...person, Vorname: "Benjamin"};
+      const updatedPersonForm = <NgForm>{value:{...person, Vorname: "Benjamin"}};
+
+      component.person = person;
+      component.editable = true;
+      component.updatePerson = new EventEmitter()
+      
+      fixture.detectChanges();
+
+      fixture.whenStable().then(() => {
+        component.onSubmit(updatedPersonForm);
+        expect(component.person).toEqual(updatedPerson)
       });
     })
   );

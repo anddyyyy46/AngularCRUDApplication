@@ -32,22 +32,23 @@ export class PersonFormComponent {
   
   onSubmit(formData:NgForm):boolean{
     if(formData.value.Vorname === "" || formData.value.Nachname === "" || formData.value.EmailAdresse === "") { //Stellt sicher, dass alle Werte gesetzt werden
-      this.error = true
-      this.errorMessage = "not all fields are filled out"
+      this.error = true;
+      this.errorMessage = "not all fields are filled out";
       return false;
     } 
     const person = {
-        Vorname: formData.value.vorname,
-        Nachname: formData.value.nachname,
-        EmailAdresse: formData.value.emailAdresse
+        Vorname: formData.value.Vorname,
+        Nachname: formData.value.Nachname,
+        EmailAdresse: formData.value.EmailAdresse
       } as Person
     if(this.newPerson) { 
-      this.addPerson.emit(person)
+      this.addPerson.emit(person);
     }
     else { 
-      person.id = this.person.id
-      this.cancelForm.emit()
-      this.updatePerson.emit(person)
+      person.id = this.person.id;
+      this.person = person;
+      this.cancelForm.emit();
+      this.updatePerson.emit(person);
     }
     return true;
   }
