@@ -8,7 +8,7 @@ import { PersonService } from '../person/person.service';
 import { HttpClientModule } from '@angular/common/http';
 
 /**
- * Der ListComponent interagiert mit dem Mock Backend.
+ * Der ListComponent interagiert mit dem Mock Backend durch den personService.
  * Dabei wird am Anfang einmal das Person Array initialisiert, dafür benutzt man den Lifecycle hook ngOnInit.
  * Da dieser vorm Konstruktor bevorzugt wird, wenn es um die Angular Architektur geht.
  */

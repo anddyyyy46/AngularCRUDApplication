@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 /**
- * Das Mock-Backend, welches alle CRUD Operations kann und wie eine echtes Backend 
- * JSON Responses schickt und als Observable im ListComponent aufgelöst wird.
+ * Der personService macht alle CRUD Operations an den json-server, dabei bekommt man genau wie in einem echten Backend 
+ * JSON Responses, welche als Observable im weiterverarbeitet werden.
  */
 
 @Injectable({
